@@ -55,7 +55,7 @@ order by PercentPopulationInfected desc
 
 Select Location, Population,date, MAX(total_cases) as HighestInfectionCount,  Max((total_cases/population))*100 as PercentPopulationInfected
 From [SQL Data Exploration Projects]..CovidDeaths
---Where location like '%states%'
+--Where location like '%india%'
 Group by Location, Population, date
 order by PercentPopulationInfected desc
 
@@ -93,7 +93,7 @@ order by 1,2,3
 -- 2.
 Select SUM(new_cases) as total_cases, SUM(cast(new_deaths as int)) as total_deaths, SUM(cast(new_deaths as int))/SUM(New_Cases)*100 as DeathPercentage
 From [SQL Data Exploration Projects]..CovidDeaths
---Where location like '%states%'
+--Where location like '%india%'
 where continent is not null 
 --Group By date
 order by 1,2
@@ -105,7 +105,7 @@ order by 1,2
 
 --Select SUM(new_cases) as total_cases, SUM(cast(new_deaths as int)) as total_deaths, SUM(cast(new_deaths as int))/SUM(New_Cases)*100 as DeathPercentage
 --From [SQL Data Exploration Projects]..CovidDeaths
-----Where location like '%states%'
+----Where location like '%india%'
 --where location = 'World'
 ----Group By date
 --order by 1,2
@@ -118,7 +118,7 @@ order by 1,2
 
 Select location, SUM(cast(new_deaths as int)) as TotalDeathCount
 From [SQL Data Exploration Projects]..CovidDeaths
---Where location like '%states%'
+--Where location like '%india%'
 Where continent is null 
 and location not in ('World', 'European Union', 'International')
 Group by location
@@ -130,7 +130,7 @@ order by TotalDeathCount desc
 
 Select Location, Population, MAX(total_cases) as HighestInfectionCount,  Max((total_cases/population))*100 as PercentPopulationInfected
 From [SQL Data Exploration Projects]..CovidDeaths
---Where location like '%states%'
+--Where location like '%india%'
 Group by Location, Population
 order by PercentPopulationInfected desc
 
@@ -140,14 +140,14 @@ order by PercentPopulationInfected desc
 
 --Select Location, date, total_cases,total_deaths, (total_deaths/total_cases)*100 as DeathPercentage
 --From [SQL Data Exploration Projects]..CovidDeaths
-----Where location like '%states%'
+----Where location like '%india%'
 --where continent is not null 
 --order by 1,2
 
 -- took the above query and added population
 Select Location, date, population, total_cases, total_deaths
 From [SQL Data Exploration Projects]..CovidDeaths
---Where location like '%states%'
+--Where location like '%india%'
 where continent is not null 
 order by 1,2
 
@@ -176,7 +176,7 @@ From PopvsVac
 
 Select Location, Population,date, MAX(total_cases) as HighestInfectionCount,  Max((total_cases/population))*100 as PercentPopulationInfected
 From [SQL Data Exploration Projects]..CovidDeaths
---Where location like '%states%'
+--Where location like '%india%'
 Group by Location, Population, date
 order by PercentPopulationInfected desc
 
